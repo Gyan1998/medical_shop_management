@@ -6,7 +6,7 @@ nav{
 
 .sidenav{
   //background-image: linear-gradient(blue,red);
-  background-image: linear-gradient(#ff99ff,#66ccff);
+  background-image: linear-gradient(pink,#66ccff);
 }
 
 /*.nav-wrapper a:hover{
