@@ -36,12 +36,12 @@ const AddCustomer=()=>{
 	    })
 	  }
 
-	  const reset=()=>{
-	  	setName("");
-	  	setAddress("");
-	  	setNum("");
-	  	setEmail("");
-	  }
+	  // const reset=()=>{
+	  // 	setName("");
+	  // 	setAddress("");
+	  // 	setNum("");
+	  // 	setEmail("");
+	  // }
 
 	  const cancel=()=>{
 		history.push("/");
@@ -83,9 +83,9 @@ const AddCustomer=()=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>cancel()}>Cancel</Link>
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
-				          <Link to="#" className="btn" onClick={()=>postCustomer()}>Add Record</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"red"}} onClick={()=>cancel()}>Cancel</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
+				          <Link to="#" className="btn" onClick={()=>postCustomer()}>Add</Link>
 				        </div>
 			        </div>
 			      </div>

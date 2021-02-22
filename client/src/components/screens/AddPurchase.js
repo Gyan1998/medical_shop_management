@@ -38,13 +38,13 @@ const AddPurchase=()=>{
 	    })
 	  }
 
-	  const reset=()=>{
-	  	setPname("");
-	  	setCname("");
-	  	setNum("");
-	  	setPrice("");
-	  	setQuantity("");
-	  }
+	  // const reset=()=>{
+	  // 	setPname("");
+	  // 	setCname("");
+	  // 	setNum("");
+	  // 	setPrice("");
+	  // 	setQuantity("");
+	  // }
 
 	  const cancel=()=>{
 		history.push("/");
@@ -92,9 +92,9 @@ const AddPurchase=()=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>cancel()}>Cancel</Link>
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
-				          <Link to="#" className="btn" onClick={()=>postPurchase()}>Add Record</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"red"}} onClick={()=>cancel()}>Cancel</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
+				          <Link to="#" className="btn" onClick={()=>postPurchase()}>Add</Link>
 				        </div>
 			        </div>
 			      </div>

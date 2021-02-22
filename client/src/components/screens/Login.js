@@ -39,10 +39,10 @@ const Login=()=>{
 	    })
 	  }
 
-	  const reset=()=>{
-	  	setEmail("");
-	  	setPassword("");
-	  }
+	  // const reset=()=>{
+	  // 	setEmail("");
+	  // 	setPassword("");
+	  // }
 
 	return (
 		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
@@ -64,7 +64,7 @@ const Login=()=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
 				          <Link to="#" className="btn" onClick={()=>PostData()}>Login</Link>
 				        </div>
 				        <div style={{display:"flex",justifyContent:"center",color:"black"}}><p style={{paddingRight:"10px"}}>Don't have any account?</p><Link to="/signup">Signup</Link></div>

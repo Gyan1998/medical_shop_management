@@ -43,11 +43,11 @@ const Signup=()=>{
 	    }
 	  }
 
-	  const reset=()=>{
-	  	setName("");
-	  	setEmail("");
-	  	setPassword("");
-	  }
+	  // const reset=()=>{
+	  // 	setName("");
+	  // 	setEmail("");
+	  // 	setPassword("");
+	  // }
 
 
 	return (
@@ -73,8 +73,8 @@ const Signup=()=>{
 					          </tr>
 					        </tbody>
 				        </table>
-				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
+				        <div class="card-action" style={{display:"flex",justifyContent:"center"}}>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
 				          <Link to="#" className="btn" onClick={()=>PostData()}>Signup</Link>
 				        </div>
 				        <div style={{display:"flex",justifyContent:"center"}}><p style={{paddingRight:"10px",color:"black"}}>Already have an account?</p><Link to="/signin">Login</Link></div>

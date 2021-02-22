@@ -38,13 +38,13 @@ const AddEmployee=()=>{
 	    })
 	  }
 
-	const reset=()=>{
-	  	setName("");
-	  	setAddress("");
-	  	setSalary("");
-	  	setNum("");
-	  	setEmail("");
-	}
+	// const reset=()=>{
+	//   	setName("");
+	//   	setAddress("");
+	//   	setSalary("");
+	//   	setNum("");
+	//   	setEmail("");
+	// }
 
 	const cancel=()=>{
 		history.push("/");
@@ -91,9 +91,9 @@ const AddEmployee=()=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>cancel()}>Cancel</Link>
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
-				          <Link to="#" className="btn" onClick={()=>postEmployee()}>Add Record</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"red"}} onClick={()=>cancel()}>Cancel</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
+				          <Link to="#" className="btn" onClick={()=>postEmployee()}>Add</Link>
 				        </div>
 			        </div>
 			      </div>
