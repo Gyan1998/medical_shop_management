@@ -19,7 +19,7 @@ const ViewMedicine=()=>{
 
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 			<div class="row">
 			    <div class="col s12 m8 offset-m2 l8 offset-l2">
 			        	<div className="hh">
@@ -50,7 +50,7 @@ const ViewMedicine=()=>{
 					        {
 					        	marray.map((el)=>{
 					        		return <tr>
-				            			<td><Link to={"/updateMedicine/"+el._id} style={{color:"cyan"}}>{el._id}</Link></td>
+				            			<td><Link to={"/updateMedicine/"+el._id} style={{color:"blue"}}>{el._id}</Link></td>
 				            			<td>{el.code}</td>
 				            			<td>{el.mname}</td>
 				            			<td>{el.dname}</td>

@@ -51,7 +51,7 @@ const Signup=()=>{
 
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 			<div class="row">
 			    <div class="col s12 m8 offset-m2 l8 offset-l2">
 			      <div class="card blue-grey darken-1">
@@ -77,7 +77,7 @@ const Signup=()=>{
 				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
 				          <Link to="#" className="btn" onClick={()=>PostData()}>Signup</Link>
 				        </div>
-				        <div style={{display:"flex",justifyContent:"center"}}><p style={{paddingRight:"10px"}}>Already have an account?</p><Link to="/signin">Login</Link></div>
+				        <div style={{display:"flex",justifyContent:"center"}}><p style={{paddingRight:"10px",color:"black"}}>Already have an account?</p><Link to="/signin">Login</Link></div>
 			        </div>
 			      </div>
 			    </div>

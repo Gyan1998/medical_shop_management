@@ -27,7 +27,7 @@ const ViewDealer=()=>{
 	}
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 			<div class="row">
 			    <div class="col s12 m8 offset-m2 l8 offset-l2">			        	<div className="hh">
 				          <Link to="addDealer" style={{passing:"5px"}}>Add Dealer</Link>
@@ -55,7 +55,7 @@ const ViewDealer=()=>{
 					        {
 					        	darray.map((el)=>{
 					        		return <tr>
-				            			<td><Link to={"/updateDealer/"+el._id} style={{color:"cyan"}}>{el._id}</Link></td>
+				            			<td><Link to={"/updateDealer/"+el._id} style={{color:"blue"}}>{el._id}</Link></td>
 				            			<td>{el.name}</td>
 				            			<td>{el.address}</td>
 				            			<td>9{el.number}</td>

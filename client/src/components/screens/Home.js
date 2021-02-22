@@ -17,7 +17,7 @@ const Home=()=>{
 
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 		</div>
 	);
 }

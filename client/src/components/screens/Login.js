@@ -45,7 +45,7 @@ const Login=()=>{
 	  }
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 			<div class="row">
 			    <div class="col s12 m8 offset-m2 l8 offset-l2">
 			      <div class="card blue-grey darken-1">
@@ -67,7 +67,7 @@ const Login=()=>{
 				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
 				          <Link to="#" className="btn" onClick={()=>PostData()}>Login</Link>
 				        </div>
-				        <div style={{display:"flex",justifyContent:"center"}}><p style={{paddingRight:"10px"}}>Don't have any account?</p><Link to="/signup">Signup</Link></div>
+				        <div style={{display:"flex",justifyContent:"center",color:"black"}}><p style={{paddingRight:"10px"}}>Don't have any account?</p><Link to="/signup">Signup</Link></div>
 			        </div>
 			      </div>
 			    </div>

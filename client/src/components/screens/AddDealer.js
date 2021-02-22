@@ -49,7 +49,7 @@ const AddDealer=(props)=>{
 
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg6.jpg')"}}>
 			<div className="row">
 			    <div className="col s12 m8 offset-m2 l8 offset-l2">
 			        	<div className="hh">

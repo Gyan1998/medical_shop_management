@@ -25,13 +25,13 @@ const Nav=()=>{
 	const renderList = ()=>{
        if(state){
            return [
-            <li><Link to="/addDealer">Dealer</Link></li>,
-	        <li><Link to="/addMedicine">Medicine</Link></li>,
-	        <li><Link to="/addEmployee">Employee</Link></li>,
-	        <li><Link to="/addCustomer">Customer</Link></li>,
-	        <li><Link to="/addPurchase">Purchase Information</Link></li>,
+            <li><Link to="/addDealer" style={{color:"black",fontWeight:"bold"}}>Dealer</Link></li>,
+	        <li><Link to="/addMedicine" style={{color:"black",fontWeight:"bold"}}>Medicine</Link></li>,
+	        <li><Link to="/addEmployee" style={{color:"black",fontWeight:"bold"}}>Employee</Link></li>,
+	        <li><Link to="/addCustomer" style={{color:"black",fontWeight:"bold"}}>Customer</Link></li>,
+	        <li><Link to="/addPurchase" style={{color:"black",fontWeight:"bold"}}>Purchase Information</Link></li>,
             <li>
-             <button className="btn #c62828 red darken-3 lgt"
+             <button className="btn #c62828 red darken-3 lgt" style={{fontWeight:"bold"}}
             onClick={()=>{
               localStorage.clear()
               dispatch({type:"CLEAR"})
@@ -44,7 +44,7 @@ const Nav=()=>{
            ]
        }else{
          return [
-          <li><Link to="/signin">Login</Link></li>
+          <li><Link to="/signin" style={{color:"black",fontWeight:"bold"}}>Login</Link></li>
          ]
        }
      }
@@ -55,7 +55,7 @@ const Nav=()=>{
 			<nav>
 			    <div class="nav-wrapper">
 			      <Link to="/" className="brand-logo" style={{left:"50px",top:"0px",fontWeight:"bold"}}><span style={{color:"white"}}>Med</span><span style={{color:"black"}}>Man</span></Link>
-			      <Link to="#" data-target="mobile-demo" class="sidenav-trigger" style={{float:"right"}}><i class="material-icons">menu</i></Link>
+			      <Link to="#" data-target="mobile-demo" class="sidenav-trigger" style={{float:"right",color:"black"}}><i class="material-icons">menu</i></Link>
 			      <ul class="right hide-on-med-and-down">
 			        {renderList()}
 			      </ul>
