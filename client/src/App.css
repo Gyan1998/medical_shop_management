@@ -1,0 +1,132 @@
+nav{
+  background-image: linear-gradient(blue,red);
+}
+
+.sidenav{
+  background-image: linear-gradient(blue,red);
+}
+
+/*.nav-wrapper a:hover{
+  color: #00ff00;
+  border-radius: 15px;
+}*/
+.sidenav .dropdown-trigger,.sidenav .material-icons{
+  color: white !important;
+}
+
+.hbg{
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 560px;
+  width: 100%;
+}
+
+
+img{
+  height: 100px;
+  width: 100px;
+}
+
+.card{
+  background-image: linear-gradient(maroon,blue);
+}
+.card-title{
+  background-color: black;
+  text-align: center;
+  padding-top:2px; 
+  padding-bottom:3px; 
+}
+
+.btn{
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+th,td{
+  padding: 0px !important;
+}
+tr{
+  border: none !important;
+}
+
+::placeholder { 
+  opacity: 0.4;
+}
+
+input{
+  color: white;
+}
+
+.card-action .btn:nth-child(1){
+  background-image: linear-gradient(red,red);
+}
+
+.card-action .btn:nth-child(2){
+  background-image: linear-gradient(green,green);
+}
+
+.card-action .btn:nth-child(3){
+  background-image: linear-gradient(green,green);
+}
+
+.dropdown-content{
+  position: relative;
+  top: -63px;
+  border-radius: 0 30px 0 30px; 
+}
+
+.dc{
+  position: relative;
+  top: -50px;
+}
+
+
+.dropdown-content li a{
+  color: black;
+}
+
+
+@media only screen and (max-width: 992px){
+  .brand-logo{
+    left: 100px !important;
+  }
+}
+
+.lgt{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+.btn1{
+  border-bottom: 2px solid yellow;
+}
+
+
+.row{
+  margin-bottom: 0px !important;
+}
+.card{
+  max-height: 450px !important;
+}
+
+.hh{
+   display: flex;
+   justify-content: space-around;
+   padding: 10px;
+   margin-top: 7px;
+   background-image: linear-gradient(maroon,blue);
+}
+
+.table th,.table td{
+  border: 1px solid gray;
+  padding: 10px !important;
+}
+
+
+.rr{
+  width: inherit !important;
+  height: 300px !important;
+  overflow-x: auto;
+  overflow-y: auto;
+}
