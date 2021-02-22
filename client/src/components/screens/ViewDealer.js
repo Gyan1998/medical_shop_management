@@ -9,7 +9,7 @@ const ViewDealer=()=>{
 	const [darray,setDarray]=useState([]);
 
     useEffect(()=>{
-    	fetch("/addDealer",{
+    	fetch("/allDealer",{
     		headers:{
     			"authorization":"Bearer " + localStorage.getItem("jwt")
     		}

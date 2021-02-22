@@ -9,7 +9,7 @@ const ViewCustomer=()=>{
 	const [carray,setCarray]=useState([]);
 
     useEffect(()=>{
-    	fetch("/addCustomer")
+    	fetch("/allCustomer")
     	.then(res=>res.json())
 	    .then(result=>{
 	    	setCarray(result);

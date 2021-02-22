@@ -9,7 +9,7 @@ const ViewPurchase=()=>{
 	const [parray,setParray]=useState([]);
 
     useEffect(()=>{
-    	fetch("/addPurchase")
+    	fetch("/allPurchase")
     	.then(res=>res.json())
 	    .then(result=>{
 	    	setParray(result);

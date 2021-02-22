@@ -11,7 +11,7 @@ const requireLogin=require('../middleware/requireLogin');
 
 
 
-router.get('/addDealer',requireLogin,async(req,res)=>{
+router.get('/allDealer',requireLogin,async(req,res)=>{
 	const dealers=await Dealer.find({});
 	//console.log(dealers);
 	res.send(dealers);
@@ -34,7 +34,7 @@ router.post('/addDealer',async(req,res)=>{
 })
 
 
-router.get('/addMedicine',async(req,res)=>{
+router.get('/allMedicine',async(req,res)=>{
 	const medicines=await Medicine.find({});
 	//console.log(medicines);
 	res.send(medicines);
@@ -57,7 +57,7 @@ router.post('/addMedicine',async(req,res)=>{
 })
 
 
-router.get('/addEmployee',async(req,res)=>{
+router.get('/allEmployee',async(req,res)=>{
 	const employers=await Employee.find({});
 	//console.log(employers);
 	res.send(employers);
@@ -80,7 +80,7 @@ router.post('/addEmployee',async(req,res)=>{
 })
 
 
-router.get('/addCustomer',async(req,res)=>{
+router.get('/allCustomer',async(req,res)=>{
 	const customers=await Customer.find({});
 	//console.log(customers);
 	res.send(customers);
@@ -103,7 +103,7 @@ router.post('/addCustomer',async(req,res)=>{
 })
 
 
-router.get('/addPurchase',async(req,res)=>{
+router.get('/allPurchase',async(req,res)=>{
 	const purchases=await Purchase.find({});
 	//console.log(purchases);
 	res.send(purchases);

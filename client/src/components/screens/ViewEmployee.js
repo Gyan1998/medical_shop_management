@@ -9,7 +9,7 @@ const ViewEmployee=()=>{
 	const [earray,setEarray]=useState([]);
 
     useEffect(()=>{
-    	fetch("/addEmployee")
+    	fetch("/allEmployee")
     	.then(res=>res.json())
 	    .then(result=>{
 	    	setEarray(result);

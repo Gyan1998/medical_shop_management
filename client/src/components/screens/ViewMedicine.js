@@ -9,7 +9,7 @@ const ViewMedicine=()=>{
 	const [marray,setMarray]=useState([]);
 
     useEffect(()=>{
-    	fetch("/addMedicine")
+    	fetch("/allMedicine")
     	.then(res=>res.json())
 	    .then(result=>{
 	    	setMarray(result);
