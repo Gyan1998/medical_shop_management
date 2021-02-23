@@ -75,18 +75,18 @@ const UpdatePurchase=(props)=>{
 
 
 
-	  const reset=()=>{
-	  	setPname("");
-	  	setCname("");
-	  	setNum("");
-	  	setPrice("");
-	  	setQuantity("");
-	  }
+	  // const reset=()=>{
+	  // 	setPname("");
+	  // 	setCname("");
+	  // 	setNum("");
+	  // 	setPrice("");
+	  // 	setQuantity("");
+	  // }
 
 
 
 	return (
-		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')",backgroundColor:"blue"}}>
+		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')",backgroundColor:"#ff99a8"}}>
 			<div class="row">
 			    <div class="col s12 m8 offset-m2 l8 offset-l2">
 			      <div class="card blue-grey darken-1">
@@ -117,9 +117,9 @@ const UpdatePurchase=(props)=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
 				          <Link to="#" className="btn" onClick={()=>updatePurchase()}>Update</Link>
-				          <Link to="#" className="btn" onClick={()=>deletePurchase()}>Delete</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"#e60000"}} onClick={()=>deletePurchase()}>Delete</Link>
 				        </div>
 			        </div>
 			      </div>

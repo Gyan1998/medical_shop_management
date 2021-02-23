@@ -20,9 +20,14 @@ router.get('/allDealer',requireLogin,async(req,res)=>{
 
 router.post('/addDealer',async(req,res)=>{
 	const {name,address,num,email}=req.body;
-	if(!name||!address||!num||!email){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!name||!address||!num||!email)
+		return res.status(422).json({error:"please add all the fields"});
+	if(!/^[a-zA-Z ]+$/.test(name))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
+	if(num.length!=10)
+		return res.status(422).json({error:"invalid phone number"});
+    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+    	return res.status(422).json({error:"invalid email"});
 	const dealer=new Dealer({
 		name,address,number:num,email
 	})
@@ -43,9 +48,10 @@ router.get('/allMedicine',async(req,res)=>{
 
 router.post('/addMedicine',async(req,res)=>{
 	const {code,mname,dname,price,stock,description}=req.body;
-	if(!code||!mname||!dname||!price||!stock||!description){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!code||!mname||!dname||!price||!stock||!description)
+		return res.status(422).json({error:"please add all the fields"});
+	if(!/^[A-Za-z ]+$/.test(dname))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
 	const medicine=new Medicine({
 		code,mname,dname,price,stock,description
 	})
@@ -66,9 +72,14 @@ router.get('/allEmployee',async(req,res)=>{
 
 router.post('/addEmployee',async(req,res)=>{
 	const {name,address,salary,num,email}=req.body;
-	if(!name||!address||!salary||!num||!email){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!name||!address||!salary||!num||!email)
+		return res.status(422).json({error:"please add all the fields"});
+	if(!/^[A-Za-z ]+$/.test(name))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
+	if(num.length!=10)
+		return res.status(422).json({error:"invalid phone number"});
+    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+    	return res.status(422).json({error:"invalid email"});
 	const employee=new Employee({
 		name,address,salary,number:num,email
 	})
@@ -89,9 +100,14 @@ router.get('/allCustomer',async(req,res)=>{
 
 router.post('/addCustomer',async(req,res)=>{
 	const {name,address,num,email}=req.body;
-	if(!name||!address||!num||!email){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!name||!address||!num||!email)
+		return res.status(422).json({error:"please add all the fields"});
+	if(!/^[A-Za-z ]+$/.test(name))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
+	if(num.length!=10)
+		return res.status(422).json({error:"invalid phone number"});
+    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+    	return res.status(422).json({error:"invalid email"});
 	const customer=new Customer({
 		name,address,number:num,email
 	})
@@ -112,9 +128,12 @@ router.get('/allPurchase',async(req,res)=>{
 
 router.post('/addPurchase',async(req,res)=>{
 	const {pname,cname,num,price,quantity}=req.body;
-	if(!pname||!cname||!num||!price||!quantity){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!pname||!cname||!num||!price||!quantity)
+		return res.status(422).json({error:"please add all the fields"});
+	if(!/^[A-Za-z ]+$/.test(cname))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
+	if(num.length!=10)
+		return res.status(422).json({error:"invalid phone number"});
 	const purchase=new Purchase({
 		pname,cname,number:num,price,quantity
 	})
@@ -146,6 +165,17 @@ router.put('/updateDealer/:id',async(req,res)=>{
 		dealer.address=req.body.address;
 		dealer.number=req.body.num;
 		dealer.email=req.body.email;
+
+		if(!req.body.name||!req.body.address||!req.body.num||!req.body.email)
+			return res.status(422).json({error:"please add all the fields"});
+		if(!/^[A-Za-z ]+$/.test(req.body.name))
+			return res.status(422).json({error:"name should contain alphabet characters only"});
+		if(String(req.body.num).length!=10)
+			return res.status(422).json({error:"invalid phone number"});
+	    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(req.body.email))
+	    	return res.status(422).json({error:"invalid email"});
+
+
 		const updatedDealer=await dealer.save();
 		if(updatedDealer){
 			return res.status(200).send({message:"dealer updated",data:updatedDealer});
@@ -189,6 +219,12 @@ router.put('/updateMedicine/:id',async(req,res)=>{
 		medicine.price=req.body.price;
 		medicine.stock=req.body.stock;
 		medicine.description=req.body.description;
+
+		if(!req.body.code||!req.body.mname||!req.body.dname||!req.body.price||!req.body.stock||!req.body.description)
+			return res.status(422).json({error:"please add all the fields"});
+		if(!/^[A-Za-z ]+$/.test(req.body.dname))
+			return res.status(422).json({error:"name should contain alphabet characters only"});
+
 		const updatedMedicine=await medicine.save();
 		if(updatedMedicine){
 			return res.status(200).send({message:"medicine updated",data:updatedMedicine});
@@ -229,8 +265,18 @@ router.put('/updateEmployee/:id',async(req,res)=>{
 		employee.name=req.body.name;
 		employee.address=req.body.address;
 		employee.salary=req.body.salary;
-		employee.num=req.body.num;
+		employee.number=req.body.num;
 		employee.email=req.body.email;
+
+		if(!req.body.name||!req.body.address||!req.body.salary||!req.body.num||!req.body.email)
+			return res.status(422).json({error:"please add all the fields"});
+		if(!/^[A-Za-z ]+$/.test(req.body.name))
+			return res.status(422).json({error:"name should contain alphabet characters only"});
+		if(String(req.body.num).length!=10)
+			return res.status(422).json({error:"invalid phone number"});
+	    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(req.body.email))
+	    	return res.status(422).json({error:"invalid email"});
+
 		const updatedEmployee=await employee.save();
 		if(updatedEmployee){
 			return res.status(200).send({message:"employee updated",data:updatedEmployee});
@@ -273,6 +319,16 @@ router.put('/updateCustomer/:id',async(req,res)=>{
 		customer.address=req.body.address;
 		customer.number=req.body.num;
 		customer.email=req.body.email;
+
+		if(!req.body.name||!req.body.address||!req.body.num||!req.body.email)
+			return res.status(422).json({error:"please add all the fields"});
+		if(!/^[A-Za-z ]+$/.test(req.body.name))
+			return res.status(422).json({error:"name should contain alphabet characters only"});
+		if(String(req.body.num).length!=10)
+			return res.status(422).json({error:"invalid phone number"});
+	    if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(req.body.email))
+	    	return res.status(422).json({error:"invalid email"});
+
 		const updatedCustomer=await customer.save();
 		if(updatedCustomer){
 			return res.status(200).send({message:"customer updated",data:updatedCustomer});
@@ -312,9 +368,17 @@ router.put('/updatePurchase/:id',async(req,res)=>{
 	if(purchase){
 		purchase.pname=req.body.pname;
 		purchase.cname=req.body.cname;
-		purchase.num=req.body.num;
+		purchase.number=req.body.num;
 		purchase.price=req.body.price;
 		purchase.quantity=req.body.quantity;
+
+		if(!req.body.pname||!req.body.cname||!req.body.num||!req.body.price||!req.body.quantity)
+			return res.status(422).json({error:"please add all the fields"});
+		if(!/^[A-Za-z ]+$/.test(req.body.cname))
+			return res.status(422).json({error:"name should contain alphabet characters only"});
+		if(String(req.body.num).length!=10)
+			return res.status(422).json({error:"invalid phone number"});
+
 		const updatedPurchase=await purchase.save();
 		if(updatedPurchase){
 			return res.status(200).send({message:"purchase updated",data:updatedPurchase});

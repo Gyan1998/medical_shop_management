@@ -9,9 +9,14 @@ const {JWT_SECRET}=require('../config/keys');
 
 router.post('/signup',(req,res)=>{
 	const {name,email,password}=req.body;
-	if(!name||!email||!password){
-		return res.status(422).json({error:"please fill all the fields"});
-	}
+	if(!name||!email||!password)
+		return res.status(422).json({error:"please add all the fields"});
+	else if(!/^[A-Za-z ]+$/.test(name))
+		return res.status(422).json({error:"name should contain alphabet characters only"});
+	else if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+		return res.status(422).json({error:"invalid email"});
+	else if(password.length<6)
+		return res.status(422).json({error:"password should contain atleast 6 characters"});
 	User.findOne({email:email})
 	.then(savedUser=>{
 		if(savedUser){
@@ -38,9 +43,12 @@ router.post('/signup',(req,res)=>{
 
 router.post('/signin',(req,res)=>{
 	const {email,password}=req.body;
-	if(!email||!password){
+	if(!email||!password)
 		return res.status(422).json({error:"please add all the fields"});
-	}
+	if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
+		return res.status(422).json({error:"invalid email"});
+	if(password.length<6)
+		return res.status(422).json({error:"password should contain atleast 6 characters"});
 	User.findOne({email:email})
 	.then(savedUser=>{
 		if(!savedUser){

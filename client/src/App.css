@@ -14,7 +14,6 @@ nav{
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  //height: 560px;
   height: 100vh;
   width: 100%;
 }
@@ -26,7 +25,6 @@ img{
 
 .card{
   background-image: linear-gradient(pink,pink);
-
 }
 
 .card-title{
@@ -116,7 +114,7 @@ input{
 .card-action{
     display: flex;
     justify-content: center;
-  }
+}
 
 @media only screen and (max-width: 992px){
   .brand-logo{

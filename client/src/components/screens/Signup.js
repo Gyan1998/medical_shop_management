@@ -12,10 +12,7 @@ const Signup=()=>{
 	const [password,setPassword]=useState("");
 
     const PostData=()=>{
-    	if(!name||!email||!password)
-    		M.toast({html: "please fill all the fields",classes:"#c62828 red darken-3"})
-    	else if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
-	    {
+
 	      fetch("/signup",{
 	      method:"post",
 	      headers:{
@@ -36,11 +33,6 @@ const Signup=()=>{
 	        history.push('/signin');
 	      }
 	    })
-	    }
-	    else
-	    {
-	      M.toast({html: "Invalid email",classes:"#c62828 red darken-3"})
-	    }
 	  }
 
 	  // const reset=()=>{

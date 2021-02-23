@@ -70,12 +70,12 @@ const UpdateDealer=(props)=>{
 	    })
 	  }
 
-	  const reset=()=>{
-	  	setName("");
-	  	setAddress("");
-	  	setNum("");
-	  	setEmail("");
-	  }
+	  // const reset=()=>{
+	  // 	setName("");
+	  // 	setAddress("");
+	  // 	setNum("");
+	  // 	setEmail("");
+	  // }
 
 	return (
 		<div className="hbg" style={{backgroundImage:"url('./images/bg1.jpg')",backgroundColor:"#ff99a8"}}>
@@ -105,9 +105,9 @@ const UpdateDealer=(props)=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>
+				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
 				          <Link to="#" className="btn" onClick={()=>updateDealer()}>Update</Link>
-				          <Link to="#" className="btn" onClick={()=>deleteDealer()}>Delete</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"#e60000"}} onClick={()=>deleteDealer()}>Delete</Link>
 				        </div>
 			        </div>
 			      </div>

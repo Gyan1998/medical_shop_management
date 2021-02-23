@@ -91,7 +91,7 @@ const AddEmployee=()=>{
 					        </tbody>
 				        </table>
 				        <div class="card-action">
-				          <Link to="#" className="btn" style={{backgroundColor:"red"}} onClick={()=>cancel()}>Cancel</Link>
+				          <Link to="#" className="btn" style={{backgroundColor:"#e60000"}} onClick={()=>cancel()}>Cancel</Link>
 				          {/*<Link to="#" className="btn" onClick={()=>reset()}>Reset</Link>*/}
 				          <Link to="#" className="btn" onClick={()=>postEmployee()}>Add</Link>
 				        </div>

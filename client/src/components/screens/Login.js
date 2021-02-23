@@ -14,30 +14,31 @@ const Login=()=>{
 	const [password,setPassword]=useState("");
 
 	const PostData=()=>{
-		fetch("/signin",{
-	      method:"post",
-	      headers:{
-	        "Content-Type":"application/json"
-	      },
-	      body:JSON.stringify({
-	        email,
-	        password
-	      })
-	    }).then(res=>res.json())
-	    .then(data=>{
-	      console.log(data);
-	      if(data.error){
-	        M.toast({html: data.error,classes:"#c62828 red darken-3"})
-	      }
-	      else{
-	      	localStorage.setItem("jwt",data.token)
-            localStorage.setItem("user",JSON.stringify(data.user))
-            dispatch({type:"USER",payload:data.user})
-	        M.toast({html: "signedin successfully",classes:"#43a047 green darken-1"})
-	        history.push('/');
-	      }
-	    })
-	  }
+
+    		fetch("/signin",{
+		      method:"post",
+		      headers:{
+		        "Content-Type":"application/json"
+		      },
+		      body:JSON.stringify({
+		        email,
+		        password
+		      })
+		    }).then(res=>res.json())
+		    .then(data=>{
+		      console.log(data);
+		      if(data.error){
+		        M.toast({html: data.error,classes:"#c62828 red darken-3"})
+		      }
+		      else{
+		      	localStorage.setItem("jwt",data.token)
+	            localStorage.setItem("user",JSON.stringify(data.user))
+	            dispatch({type:"USER",payload:data.user})
+		        M.toast({html: "signedin successfully",classes:"#43a047 green darken-1"})
+		        history.push('/');
+		      }
+		    })
+    	}
 
 	  // const reset=()=>{
 	  // 	setEmail("");
